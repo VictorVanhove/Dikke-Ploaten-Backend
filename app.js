@@ -22,28 +22,28 @@ const server = require('http').createServer(app);
 //config server
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/',index);
-app.use('/api/user',user);
-app.use('/api/task',task);
+app.use('/', index);
+app.use('/api/user', user);
+app.use('/api/task', task);
 
 //Database connection
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DB_CONNECTION_URL,{
+mongoose.connect(process.env.DB_CONNECTION_URL, {
     useNewUrlParser: true,
     useCreateIndex: true
 });
 
 //catch 404 and forward to error handler
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
 //error handler
-app.use(function(err, req,res, next){
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.json(err.message);
 });
