@@ -26,7 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 app.use('/',index);
 app.use('/api/user',user);
-app.use('/api/albums', db.json)
 app.use('/api/task',task);
 
 //Database connection
