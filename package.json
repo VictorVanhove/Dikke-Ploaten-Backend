@@ -1,12 +1,9 @@
 {
   "name": "dikke-ploaten-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "MongoDB with Mongoose on Node.js for 'Dikke Ploaten'-app",
   "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
-  "author": "",
+  "author": "Victor Vanhove",
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.19.0",
