@@ -9,10 +9,12 @@ require('dotenv').config();
 //mongoose schemas
 require('./models/User');
 require('./models/Task');
+require('./models/Album');
 
 //routes
-var user = require('./routes/user');
-var task = require('./routes/task');
+var users = require('./routes/user');
+var tasks = require('./routes/task');
+var albums = require('./routes/album');
 var index = require('./routes/index');
 
 //init server
@@ -25,12 +27,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
-app.use('/api/user', user);
-app.use('/api/task', task);
+app.use('/api/users', users);
+app.use('/api/tasks', tasks);
+app.use('/api/albums', albums);
 
 //Database connection
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DB_CONNECTION_URL, {
+mongoose.connect(process.env.DB_CONNECTION_URL || 'mongodb://localhost:27017/mydb', {
     useNewUrlParser: true,
     useCreateIndex: true
 });
