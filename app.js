@@ -12,8 +12,6 @@ require('./models/Task');
 require('./models/Album');
 
 //routes
-var users = require('./routes/user');
-var tasks = require('./routes/task');
 var albums = require('./routes/album');
 var index = require('./routes/index');
 
@@ -27,8 +25,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
-app.use('/api/users', users);
-app.use('/api/tasks', tasks);
 app.use('/api/albums', albums);
 
 //Database connection
