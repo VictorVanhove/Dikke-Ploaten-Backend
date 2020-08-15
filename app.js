@@ -7,8 +7,6 @@ var logger = require('morgan');
 require('dotenv').config();
 
 //mongoose schemas
-require('./models/User');
-require('./models/Task');
 require('./models/Album');
 
 //routes
